@@ -50,10 +50,12 @@ public class BlackjackController {
 		return "redirect:/blackjack";
 	}
 	
-	//@PostMapping("deal")
-	//public String dealCards() {
-	//	return "redirect:/blackjack";
-	//}
+	@PostMapping("nexthand")
+	public String dealCards() {
+		dealer = new Dealer();
+		gambler = new Gambler();
+		return "blackjack/blackjack-form";
+	}
 	
 	@PostMapping("stand")
 	public String standHand() {

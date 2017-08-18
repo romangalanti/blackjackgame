@@ -17,7 +17,5 @@ public class Gambler {
 	public Hand getHand() {
 		return hand;
 	}
-
 	
-
 }
