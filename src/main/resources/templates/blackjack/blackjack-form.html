@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Blackjack!</title>
+	</head>
+	<body>
+	<h1>Let's play Blackjack!</h1>
+		<h2>Your hand</h2>
+		{{#hand.values}}
+			<div>Value: {{ . }}</div>
+		{{/hand.values}}
+		<hr>
+		{{#hand.cards}}
+			<div>{{ suit }} of {{ visualRepresentation }}</div>
+		{{/hand.cards}}
+		<form method="post" action="/blackjack/bet">
+			<input autofocus type="number" step= "any" name="enteredValue" value="0" required>
+			<button>Bet</button>
+		</form>
+		<!--<form method="post" action="/blackjack/deal">
+			<button>Deal</button>
+		</form>-->
+		<form method="post" action="/blackjack/stand">
+			<button>Stand</button>
+		</form>
+		<form method="post" action="/blackjack/hit">
+			<button>Hit</button>
+		</form>	
+		<form method="post" action="/blackjack/rules">
+			<button>Rules</button>
+		</form>
+	</body>
+</html>
