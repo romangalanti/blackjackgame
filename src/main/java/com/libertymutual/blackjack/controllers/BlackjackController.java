@@ -29,13 +29,16 @@ public class BlackjackController {
 	
 	@GetMapping("")
 	public String showCalculatorHomePage(Model model) {
-		Hand hand = new Hand();
-		model.addAttribute("hand", hand);
+		Hand dealerHand = dealer.getHand();
+		Hand gamblerHand = gambler.getHand();
+		model.addAttribute("dealerHand", dealerHand);
+		model.addAttribute("gamblerHand", gamblerHand);
 		return "blackjack/blackjack-form";
 	}
 	
 	@PostMapping("bet")
 	public String betMoney() {
+		activeDeck.shuffle();
 		Card cardToDeal = activeDeck.getCard();
 		gambler.giveCard(cardToDeal);
 		cardToDeal = activeDeck.getCard();
@@ -54,11 +57,14 @@ public class BlackjackController {
 	
 	@PostMapping("stand")
 	public String standHand() {
+		dealer.finishDealerHand(activeDeck);
 		return "redirect:/blackjack";
 	}
 	
 	@PostMapping("hit")
 	public String hitHand() {
+		Card cardToDeal = activeDeck.getCard();
+		gambler.giveCard(cardToDeal);
 		return "redirect:/blackjack";
 	}
 	

@@ -5,10 +5,14 @@
 	</head>
 	<body>
 	<h1>Let's play Blackjack!</h1>
-		<h2>Your hand</h2>
-		{{#hand.values}}
+		<h2>Dealer Hand</h2>
+		{{#dealerHand.values}}
 			<div>Value: {{ . }}</div>
-		{{/hand.values}}
+		{{/dealerHand.values}}
+		<h2>Your Hand</h2>
+		{{#gamblerHand.values}}
+			<div>Value: {{ . }}</div>
+		{{/gamblerHand.values}}
 		<hr>
 		{{#hand.cards}}
 			<div>{{ suit }} of {{ visualRepresentation }}</div>

@@ -13,6 +13,10 @@ public class Gambler {
 		hand.addCard(cardToDeal);
 		
 	}
+	
+	public Hand getHand() {
+		return hand;
+	}
 
 	
 
