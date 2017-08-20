@@ -48,4 +48,8 @@ public class Gambler {
 		return hand.getHighestValidValue();
 	}
 	
+	public Hand getHand() {
+		return hand;
+	}
+	
 }

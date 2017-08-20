@@ -9,15 +9,13 @@
 		{{#dealer.cards}}
 			<div>{{ visualRepresentation }} of {{ suit }}</div>
 		{{/dealer.cards}}
-		{{#dealerHand.cards}}
-		<div>Card Total: {{ . }}</div>
-		{{/dealerHand.values}}
 		<hr>
 		<h2>Your Hand</h2>
 		{{#gambler.cards}}
 			<div>{{ visualRepresentation }} of {{ suit }}</div>
 		{{/gambler.cards}}
-		{{#gamblerHand.cards}}
+		<br>
+		{{#gamblerHand.values}}
 		<div>Card Total: {{ . }}</div>
 		{{/gamblerHand.values}}
 		<hr>

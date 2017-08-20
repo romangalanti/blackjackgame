@@ -28,13 +28,11 @@ public class BlackjackController {
 		if (gambler.bust()) {
 			actualBet = 0;
 		}
-		Hand dealerHand = dealer.getHand();
 		Hand gamblerHand = gambler.getHand();
 		ModelAndView mv = new ModelAndView("blackjack/blackjack-form");
 		mv.addObject("gambler", gambler);
 		mv.addObject("dealer", dealer);
 		mv.addObject("gamblerHand", gamblerHand);
-		mv.addObject("dealerHand", dealerHand);
 		mv.addObject("actualBet", actualBet);
 		mv.addObject("betStatus", actualBet == 0 && gambler.getCashInWallet() > 0);
 		mv.addObject("roundStatus", actualBet != 0 && dealer.numberOfCardsLeftInDeck() > 0);
