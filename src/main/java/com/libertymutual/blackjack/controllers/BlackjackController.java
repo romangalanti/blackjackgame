@@ -1,11 +1,10 @@
 package com.libertymutual.blackjack.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.libertymutual.blackjack.models.Dealer;
 import com.libertymutual.blackjack.models.Gambler;
 import com.libertymutual.blackjack.models.Hand;
@@ -24,19 +23,18 @@ public class BlackjackController {
 	}
 	
 	@GetMapping("")
-	public ModelAndView notAGame() {
+	public String blackjack(Model model) {
 		if (gambler.bust()) {
 			actualBet = 0;
 		}
 		Hand gamblerHand = gambler.getHand();
-		ModelAndView mv = new ModelAndView("blackjack/blackjack-form");
-		mv.addObject("gambler", gambler);
-		mv.addObject("dealer", dealer);
-		mv.addObject("gamblerHand", gamblerHand);
-		mv.addObject("actualBet", actualBet);
-		mv.addObject("betStatus", actualBet == 0 && gambler.getCashInWallet() > 0);
-		mv.addObject("roundStatus", actualBet != 0 && dealer.numberOfCardsLeftInDeck() > 0);
-		return mv;
+		model.addAttribute("gambler", gambler);
+		model.addAttribute("dealer", dealer);
+		model.addAttribute("gamblerHand", gamblerHand);
+		model.addAttribute("actualBet", actualBet);
+		model.addAttribute("betStatus", actualBet == 0 && gambler.getCashInWallet() > 0);
+		model.addAttribute("roundStatus", actualBet != 0 && dealer.numberOfCardsLeftInDeck() > 0);
+		return "blackjack/blackjack-form";
 	}
 	
 	@PostMapping("bet")
