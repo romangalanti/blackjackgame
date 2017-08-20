@@ -15,7 +15,7 @@ public class Hand {
 		cards.add(card);
 	}
 	
-	public List<Card> getCard() {
+	public List<Card> getCards() {
 		return cards;
 	}
 	
@@ -29,6 +29,24 @@ public class Hand {
 		}
 		
 		return sums;
+	}
+	
+	public boolean blackjack() {
+		int[] count = getValues();
+		return cards.size() == 2 &&
+				(count[0] == 21 || count[1] == 21);
+	}
+	
+	public int getHighestValidValue() {
+		int[] count = getValues();
+		if (count[0] < 21 && count[1] < 21) {
+			return Math.max(count[0], count[1]);
+		} else if (count[0] < 21) {
+			return count[0];
+		} else if (count[1] < 21) {
+			return count[1];
+		}
+		return 0;
 	}
 	
 }

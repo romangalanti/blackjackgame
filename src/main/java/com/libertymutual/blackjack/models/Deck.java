@@ -80,5 +80,9 @@ public class Deck {
 		}
 	}
 	
+	public int numberOfCardsLeftInDeck() {
+		return cards.length - currentCardIndex;
+	}
+	
 	
 }

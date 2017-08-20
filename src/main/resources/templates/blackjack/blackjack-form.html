@@ -6,30 +6,37 @@
 	<body>
 	<h1>Let's play Blackjack!</h1>
 		<h2>Dealer Hand</h2>
-		{{#dealerHand.values}}
-			<div>Value: {{ . }}</div>
+		{{#dealer.cards}}
+			<div>{{ visualRepresentation }} of {{ suit }}</div>
+		{{/dealer.cards}}
+		{{#dealerHand.cards}}
+		<div>Card Total: {{ . }}</div>
 		{{/dealerHand.values}}
+		<hr>
 		<h2>Your Hand</h2>
-		{{#gamblerHand.values}}
-			<div>Value: {{ . }}</div>
+		{{#gambler.cards}}
+			<div>{{ visualRepresentation }} of {{ suit }}</div>
+		{{/gambler.cards}}
+		{{#gamblerHand.cards}}
+		<div>Card Total: {{ . }}</div>
 		{{/gamblerHand.values}}
 		<hr>
-		{{#hand.cards}}
-			<div>{{ suit }} of {{ visualRepresentation }}</div>
-		{{/hand.cards}}
+		<div>Wager: {{ actualBet }}</div>
+		<div>Cash in Wallet: {{ gambler.cashInWallet }}</div>
+		{{#betStatus}}
 		<form method="post" action="/blackjack/bet">
 			<input autofocus type="number" step= "any" name="enteredValue" value="0" required>
 			<button>Bet</button>
 		</form>
-		<form method="post" action="/blackjack/nexthand">
-			<button>Next Hand</button>
-		</form>
-		<form method="post" action="/blackjack/stand">
-			<button>Stand</button>
-		</form>
+		{{/betStatus}}
+		{{#roundStatus}}
 		<form method="post" action="/blackjack/hit">
 			<button>Hit</button>
 		</form>	
+		<form method="post" action="/blackjack/stand">
+			<button>Stand</button>
+		</form>
+		{{/roundStatus}}
 		<form method="post" action="/blackjack/rules">
 			<button>Rules</button>
 		</form>
