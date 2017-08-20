@@ -7,5 +7,101 @@
 		<form method="post" action ="/blackjack/rules/home">
 			<button>Return Home</button>
 		</form>
-	</body>
+  	<h1>Blackjack</h1>
+  	<p>
+    Not just the name of the game, this is also the name of the two-card hand
+    where the player (including the dealer) has an Ace and a card worth 10
+    points.
+  	</p>
+  	<h2>Hole</h2>
+  	<p>
+    	The dealer's card that is face down
+  	</p>
+  	<h2>Hit</h2>
+  	<p>
+    	IF a player wants to be "hit", that means they'd like another card from
+    	the deck to increase their hands' total.
+  	</p>
+  	<h2>Stand</h2>
+  	<p>
+    	If a player "stands", then this means they no longer want to receive more
+    	cards.
+  	</p>
+  	<h2>Bust</h2>
+  	<p>
+    	When a player's hand's value exceeds 21 points, then that hand has
+    	"busted" and that player has lost.
+  	</p>
+<h2>How to Play</h2>
+<p>The flow of Blackjack is fairly simple.</p>
+
+<ul>
+<li>Players place bets before the dealer gives them any cards</li>
+<li>The dealer deals two cards face up to each player. The dealer receives one
+card face up and one face down.</li>
+<li>The dealer asks each player, in turn, whether they want to hit or stand.</li>
+<li>If a player wants another card, they will say "Hit me" and the dealer will
+give them another card.</li>
+<li>If a player's hand has "busted", then their turn has ended and they forfeit
+their bet.</li>
+<li>Once all players have "stood" or "busted", then the dealer reveals the hole
+card and takes cards until the dealer's hand is greater than 16 points.</li>
+<li>Payouts to players are based on the final scores of their hand in relation
+to the dealer's hand.</li>
+<li>The cards are gathered and put to the side and the dealer deals another
+round of cards. If the dealer runs out of cards, they will pick up the
+used cards, shuffle them, and continue the deal.</li>
+</ul>
+<h2>Payouts</h2>
+<p>After all of the play of a round, the dealer pays players based on the
+following scores.</p>
+
+<div class="m-coursecontent-table-outer"><table>
+<thead>
+<tr>
+<th>You have</th>
+<th>The dealer has</th>
+<th>You get paid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Busted</td>
+<td>Anything</td>
+<td>Nothing and lose your bet</td>
+</tr>
+<tr>
+<td>Blackjack</td>
+<td>
+<strong>Not</strong> Blackjack</td>
+<td>3 to 2, so if you bet $20, the dealer pays you $30</td>
+</tr>
+<tr>
+<td>Blackjack</td>
+<td>Blackjack</td>
+<td>You keep your money</td>
+</tr>
+<tr>
+<td>&lt;= 21</td>
+<td>Busted</td>
+<td>2 to 1, so if you bet $20, the dealer gives you $20 more</td>
+</tr>
+<tr>
+<td>&lt;= 21</td>
+<td>less than you</td>
+<td>2 to 1, so if you bet $20, the dealer gives you $20 more</td>
+</tr>
+<tr>
+<td>less than the dealer</td>
+<td>&lt;= 21</td>
+<td>Nothing and lose your bet</td>
+</tr>
+<tr>
+<td>the same as the dealer</td>
+<td>the same as you</td>
+<td>Nothing but get to keep your bet</td>
+</tr>
+</tbody>
+</table></div>
+</body>
 </html>
