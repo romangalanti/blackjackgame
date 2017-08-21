@@ -76,6 +76,13 @@ public class BlackjackController {
 		return "redirect:/blackjack";
 	}
 	
+	@PostMapping("reset")
+	public String resetGame() {
+		dealer = new Dealer();
+		gambler = new Gambler();
+		return "redirect:/blackjack";
+	}
+	
 	@PostMapping("rules")
 	public String showRules() {
 		return "blackjack/blackjack-rules";
