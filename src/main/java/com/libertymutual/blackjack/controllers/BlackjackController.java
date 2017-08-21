@@ -36,8 +36,8 @@ public class BlackjackController {
 		model.addAttribute("gamblerHand", gamblerHand);
 		model.addAttribute("dealerHand", dealerHand);
 		model.addAttribute("actualBet", actualBet);
-		model.addAttribute("betStatus", actualBet == 0 && gambler.getCashInWallet() > 0);
-		model.addAttribute("roundStatus", actualBet != 0 && dealer.numberOfCardsLeftInDeck() > 0);
+		model.addAttribute("makeBetBeforeRound", actualBet == 0 && gambler.getCashInWallet() > 0);
+		model.addAttribute("playHand", actualBet != 0 && dealer.numberOfCardsLeftInDeck() > 0);
 		return "blackjack/blackjack-form";
 	}
 	

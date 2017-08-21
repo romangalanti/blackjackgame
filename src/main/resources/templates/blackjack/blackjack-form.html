@@ -26,20 +26,20 @@
 		<div><b>Wager:</b> {{ actualBet }}</div>
 		<div><b>Cash in Wallet:</b> {{ gambler.cashInWallet }}</div>
 		<div><b>Cards Left In Deck:</b> {{ numberOfCardsLeftInDeck }}</div>
-		{{#betStatus}}
+		{{#makeBetBeforeRound}}
 		<form method="post" action="/blackjack/bet">
 			<input autofocus type="number" step= "any" name="enteredValue" value="0" required>
 			<button>Bet</button>
 		</form>
-		{{/betStatus}}
-		{{#roundStatus}}
+		{{/makeBetBeforeRound}}
+		{{#playHand}}
 		<form method="post" action="/blackjack/hit">
 			<button>Hit</button>
 		</form>	
 		<form method="post" action="/blackjack/stand">
 			<button>Stand</button>
 		</form>
-		{{/roundStatus}}
+		{{/playHand}}
 		<form method="post" action="/blackjack/reset">
 			<button>Reset Game</button>
 		</form>
