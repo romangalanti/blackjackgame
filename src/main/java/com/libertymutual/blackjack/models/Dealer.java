@@ -76,5 +76,9 @@ public class Dealer {
 	public int getBestScore() {
 		return hand.getHighestValidValue();
 	}
+	
+	public Hand getHand() {
+		return hand;
+	}
 
 }

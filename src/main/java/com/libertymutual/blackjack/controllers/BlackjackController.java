@@ -27,10 +27,14 @@ public class BlackjackController {
 		if (gambler.bust()) {
 			actualBet = 0;
 		}
+		Hand dealerHand = dealer.getHand();
 		Hand gamblerHand = gambler.getHand();
+		int numberOfCardsLeftInDeck = dealer.numberOfCardsLeftInDeck();
+		model.addAttribute("numberOfCardsLeftInDeck", numberOfCardsLeftInDeck);
 		model.addAttribute("gambler", gambler);
 		model.addAttribute("dealer", dealer);
 		model.addAttribute("gamblerHand", gamblerHand);
+		model.addAttribute("dealerHand", dealerHand);
 		model.addAttribute("actualBet", actualBet);
 		model.addAttribute("betStatus", actualBet == 0 && gambler.getCashInWallet() > 0);
 		model.addAttribute("roundStatus", actualBet != 0 && dealer.numberOfCardsLeftInDeck() > 0);
