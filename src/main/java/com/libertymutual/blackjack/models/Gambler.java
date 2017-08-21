@@ -23,7 +23,7 @@ public class Gambler {
 		return cashInWallet;
 	}
 	
-	//takes bet out of wallet (cashInWaller = cashInWallet - bet)
+	//takes bet out of wallet (cashInWallet = cashInWallet - bet)
 	public int wager(int bet) {
 		hand = new Hand();
 		bet = Math.min(bet, cashInWallet);
