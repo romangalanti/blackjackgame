@@ -49,7 +49,7 @@
 		{{/dealerHand.values}}
 		<br>
 		<form method="post" action="/blackjack/bet">
-			<input autofocus type="number" step= "any" name="enteredValue" value="0" required>
+			<input autofocus type="number" min="0" step= "any" name="enteredValue" value="0" required>
 			<button>Bet</button>
 		</form>
 		{{/makeBetBeforeRound}}
