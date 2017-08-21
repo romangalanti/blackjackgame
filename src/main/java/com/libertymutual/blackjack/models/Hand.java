@@ -31,12 +31,14 @@ public class Hand {
 		return sums;
 	}
 	
+	//2 cards with totals of 21 is blackjack criteria
 	public boolean blackjack() {
 		int[] count = getValues();
 		return cards.size() == 2 &&
 				(count[0] == 21 || count[1] == 21);
 	}
 	
+	//get highest value that is under 21
 	public int getHighestValidValue() {
 		int[] count = getValues();
 		if (count[0] < 21 && count[1] < 21) {

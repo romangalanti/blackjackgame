@@ -20,7 +20,7 @@ public class Dealer {
 		return deck.numberOfCardsLeftInDeck();
 	}
 	
-	//bust criteria
+	//dealer bust criteria
 	public boolean bust() {
 		int[] count = hand.getValues();
 		return count[0] > 21 && count[1] > 21;
