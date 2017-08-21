@@ -14,21 +14,25 @@ public class Dealer {
 		deck = new Deck();
 		deck.shuffle();
 	}
-
+	
+	//returns number of cards left in deck from deck class
 	public int numberOfCardsLeftInDeck() {
 		return deck.numberOfCardsLeftInDeck();
 	}
 	
+	//bust criteria
 	public boolean bust() {
 		int[] count = hand.getValues();
 		return count[0] > 21 && count[1] > 21;
 	}
 	
+	//hides hole card and instantiates a new hand
 	public void beginRound() {
 		hideHoleCard = true;
 		hand = new Hand();
 	}
 	
+	//reveals hole card, hits until dealer gets 17, does not hit if count = 21 or above 17.
 	public void endRound() {
 		hideHoleCard = false;
 		int [] count = hand.getValues();
@@ -40,9 +44,9 @@ public class Dealer {
 			dealCardToSelf();
 			count = hand.getValues();
 		}
-		
 	}
 	
+	//holecard hide/add using card list
 	public List<Card> getCards() {
 		List<Card> cards = hand.getCards();
 		if (!hideHoleCard || cards.size() == 0) {
@@ -56,6 +60,7 @@ public class Dealer {
 		return cardsToShow;
 	}
 	
+	//deals card to gambler
 	public void dealCardToGambler(Gambler gambler) {
 		Card card = deck.getCard();
 		if (card != null) {
@@ -63,6 +68,7 @@ public class Dealer {
 		}
 	}
 	
+	//deals card to dealer
 	public void dealCardToSelf() {
 		Card card = deck.getCard();
 		if (card != null) {
@@ -70,14 +76,17 @@ public class Dealer {
 		}
 	}
 	
+	//uses blackjack criteria from hand class
 	public boolean hasBlackJack() {
 		return hand.blackjack();
 	}
 	
+	//used for determining whether or not dealer or gambler has higher hand count
 	public int getBestScore() {
 		return hand.getHighestValidValue();
 	}
 	
+	//returns hand values
 	public Hand getHand() {
 		return hand;
 	}

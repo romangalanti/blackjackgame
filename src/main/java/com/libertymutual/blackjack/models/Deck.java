@@ -30,7 +30,8 @@ public class Deck {
 			}
 		}
 	}
-
+	
+	//currentCardIndex = currentCardIndex + 1
 	public Card getCard() {
 		if (currentCardIndex >= cards.length) {
 			return null;
@@ -41,6 +42,7 @@ public class Deck {
 		return cardToReturn;
 	}
 	
+	//shuffles deck
 	public void shuffle() {
 		for (int doThisSevenTimes = 0; doThisSevenTimes < 7; doThisSevenTimes += 1) {
 			Card[] tempCardHolder1 = new Card[26];
@@ -80,6 +82,7 @@ public class Deck {
 		}
 	}
 	
+	//number of cards left in deck
 	public int numberOfCardsLeftInDeck() {
 		return cards.length - currentCardIndex;
 	}

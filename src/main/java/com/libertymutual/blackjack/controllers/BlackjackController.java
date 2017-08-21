@@ -67,8 +67,7 @@ public class BlackjackController {
 		
 		actualBet = 0;
 		return "redirect:/blackjack";
-		
-	}	
+	}
 	
 	@PostMapping("hit")
 	public String hitHand() {

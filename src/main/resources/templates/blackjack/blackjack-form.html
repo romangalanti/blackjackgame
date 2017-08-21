@@ -7,12 +7,12 @@
 	<h1>Let's play Blackjack!</h1>
 		<h2>Dealer Hand</h2>
 		{{#dealer.cards}}
-			<div>{{ visualRepresentation }} of {{ suit }}</div>
+			<div>Card: {{ visualRepresentation }} of {{ suit }}</div>
 		{{/dealer.cards}}
 		<hr>
 		<h2>Your Hand</h2>
 		{{#gambler.cards}}
-			<div>{{ visualRepresentation }} of {{ suit }}</div>
+			<div>Card: {{ visualRepresentation }} of {{ suit }}</div>
 		{{/gambler.cards}}
 		<br>
 		{{#gamblerHand.values}}
@@ -36,7 +36,7 @@
 		{{#playHand}}
 		<form method="post" action="/blackjack/hit">
 			<button>Hit</button>
-		</form>	
+		</form>
 		<form method="post" action="/blackjack/stand">
 			<button>Stand</button>
 		</form>
