@@ -40,6 +40,7 @@ public class Dealer {
 			dealCardToSelf();
 			count = hand.getValues();
 		}
+		
 	}
 	
 	public List<Card> getCards() {
