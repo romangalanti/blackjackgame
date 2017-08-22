@@ -41,11 +41,11 @@ public class Hand {
 	//get highest value that is under 21
 	public int getHighestValidValue() {
 		int[] count = getValues();
-		if (count[0] < 21 && count[1] < 21) {
+		if (count[0] <= 21 && count[1] < 22) {
 			return Math.max(count[0], count[1]);
-		} else if (count[0] < 21) {
+		} else if (count[0] <= 21) {
 			return count[0];
-		} else if (count[1] < 21) {
+		} else if (count[1] < 22) {
 			return count[1];
 		}
 		return 0;
